@@ -1,0 +1,13 @@
+# token-diet 的 bundle patch：装进 profile 后由 dsh 自动插入这一行。
+# 只想手动接线而不用 bundle 时，把下面这段直接贴进
+# <DSH_HOME>/profiles/<profile>/cordis.patch.yml 顶层的 insert 列表。
+- insert:
+    - id: token-diet
+      name: dsh-token-diet
+      config:
+        minBytes: 2048          # 小于这个字节数的结果不动
+        foldRepeats: true       # 连续重复行折叠成 "line  ×N"
+        repeatThreshold: 3      # 连续出现几次才折叠
+        stripAnsi: true         # 去 ANSI 色码
+        collapseBlank: true     # 连续空行压成一行
+        reportEvery: 20         # 每 N 次改动往 logger 打一行累计账

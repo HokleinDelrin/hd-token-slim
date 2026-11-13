@@ -1,0 +1,52 @@
+{
+  "name": "hd-token-slim",
+  "version": "0.1.0",
+  "description": "Slim agent tool output before it enters context: strip ANSI, fold repeated lines, collapse blank runs. Zero dependencies.",
+  "type": "module",
+  "license": "MIT",
+  "author": "HokleinDelrin",
+  "homepage": "https://github.com/HokleinDelrin/hd-token-slim#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HokleinDelrin/hd-token-slim.git"
+  },
+  "bugs": {
+    "url": "https://github.com/HokleinDelrin/hd-token-slim/issues"
+  },
+  "main": "src/slim.mjs",
+  "exports": {
+    ".": "./src/slim.mjs"
+  },
+  "bin": {
+    "slim": "bin/slim.mjs",
+    "mcp-slim-proxy": "bin/mcp-proxy.mjs"
+  },
+  "files": [
+    "bin/",
+    "src/",
+    "adapters/",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "test": "node --test",
+    "test:slim": "node --test test/slim.test.mjs test/cli.test.mjs",
+    "smoke": "node -e \"process.stdout.write('a\\n'.repeat(200)+'z'.repeat(3000))\" | node bin/slim.mjs --stats"
+  },
+  "keywords": [
+    "llm",
+    "tokens",
+    "context",
+    "mcp",
+    "mcp-proxy",
+    "agent",
+    "claude",
+    "tool-output",
+    "ansi",
+    "slim",
+    "log-compression"
+  ]
+}

@@ -1,0 +1,9 @@
+# handoff-watch 的 bundle patch：装进 profile 后由 dsh 自动插入这一行。
+- insert:
+    - id: handoff-watch
+      name: dsh-handoff-watch
+      config:
+        warnTokens: 200000
+        hardTokens: 320000
+        repeatEverySteps: 6
+        handoverPath: '<DSH_HOME>/tools/handover.mjs'

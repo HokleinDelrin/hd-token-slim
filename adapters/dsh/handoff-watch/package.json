@@ -1,0 +1,18 @@
+{
+  "name": "dsh-handoff-watch",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Watches a session's context size and, past a threshold, reminds the model to write a handover document before the user opens a new one.",
+  "type": "module",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "cordis.patch.yml"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "peerDependencies": {}
+}

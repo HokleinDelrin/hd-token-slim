@@ -1,0 +1,9 @@
+# tool-sentinel 的 bundle patch：装进 profile 后由 dsh 自动插入这一行。
+- insert:
+    - id: tool-sentinel
+      name: dsh-tool-sentinel
+      config:
+        minExploreCalls: 6
+        minExploreKB: 80
+        repeatEverySteps: 8
+        order: 2900
